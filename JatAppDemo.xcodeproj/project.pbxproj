@@ -12,6 +12,12 @@
 		E383745B213AFB63006C1054 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3837459213AFB63006C1054 /* Main.storyboard */; };
 		E383745D213AFB65006C1054 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E383745C213AFB65006C1054 /* Assets.xcassets */; };
 		E3837460213AFB65006C1054 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E383745E213AFB65006C1054 /* LaunchScreen.storyboard */; };
+		E3837469213B023C006C1054 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3837468213B023C006C1054 /* Alamofire.framework */; };
+		E383746B213B023F006C1054 /* CleanroomLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E383746A213B023F006C1054 /* CleanroomLogger.framework */; };
+		E383746D213B0243006C1054 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E383746C213B0243006C1054 /* KeychainAccess.framework */; };
+		E383746F213B0247006C1054 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E383746E213B0247006C1054 /* MBProgressHUD.framework */; };
+		E3837471213B024C006C1054 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3837470213B024C006C1054 /* ObjectMapper.framework */; };
+		E3837473213B0250006C1054 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3837472213B0250006C1054 /* Result.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,12 @@
 		E383745C213AFB65006C1054 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E383745F213AFB65006C1054 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3837461213AFB65006C1054 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3837468213B023C006C1054 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		E383746A213B023F006C1054 /* CleanroomLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CleanroomLogger.framework; path = Carthage/Build/iOS/CleanroomLogger.framework; sourceTree = "<group>"; };
+		E383746C213B0243006C1054 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
+		E383746E213B0247006C1054 /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
+		E3837470213B024C006C1054 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		E3837472213B0250006C1054 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +41,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3837473213B0250006C1054 /* Result.framework in Frameworks */,
+				E3837471213B024C006C1054 /* ObjectMapper.framework in Frameworks */,
+				E383746F213B0247006C1054 /* MBProgressHUD.framework in Frameworks */,
+				E383746D213B0243006C1054 /* KeychainAccess.framework in Frameworks */,
+				E383746B213B023F006C1054 /* CleanroomLogger.framework in Frameworks */,
+				E3837469213B023C006C1054 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +58,7 @@
 			children = (
 				E3837454213AFB63006C1054 /* JatAppDemo */,
 				E3837453213AFB63006C1054 /* Products */,
+				E3837467213B023C006C1054 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +83,19 @@
 			path = JatAppDemo;
 			sourceTree = "<group>";
 		};
+		E3837467213B023C006C1054 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E3837472213B0250006C1054 /* Result.framework */,
+				E3837470213B024C006C1054 /* ObjectMapper.framework */,
+				E383746E213B0247006C1054 /* MBProgressHUD.framework */,
+				E383746C213B0243006C1054 /* KeychainAccess.framework */,
+				E383746A213B023F006C1054 /* CleanroomLogger.framework */,
+				E3837468213B023C006C1054 /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +106,7 @@
 				E383744E213AFB63006C1054 /* Sources */,
 				E383744F213AFB63006C1054 /* Frameworks */,
 				E3837450213AFB63006C1054 /* Resources */,
+				E3837475213B05FF006C1054 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -129,6 +162,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E3837475213B05FF006C1054 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CleanroomLogger.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MBProgressHUD.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E383744E213AFB63006C1054 /* Sources */ = {
@@ -282,6 +337,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7LLQS9XBT5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = JatAppDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,6 +359,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7LLQS9XBT5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = JatAppDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
