@@ -14,6 +14,8 @@
 		E360E299213EC31F00CBE9A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E298213EC31F00CBE9A7 /* LoginViewController.swift */; };
 		E360E29B213EC40300CBE9A7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E29A213EC40300CBE9A7 /* LoginViewModel.swift */; };
 		E360E29D213ED40F00CBE9A7 /* IQKeyboardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E360E29C213ED40F00CBE9A7 /* IQKeyboardManager.framework */; };
+		E360E29F213EE37800CBE9A7 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E29E213EE37700CBE9A7 /* RegistrationViewModel.swift */; };
+		E360E2A1213EE38600CBE9A7 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E2A0213EE38600CBE9A7 /* RegistrationViewController.swift */; };
 		E3837456213AFB63006C1054 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3837455213AFB63006C1054 /* AppDelegate.swift */; };
 		E383745B213AFB63006C1054 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3837459213AFB63006C1054 /* Main.storyboard */; };
 		E383745D213AFB65006C1054 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E383745C213AFB65006C1054 /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 		E360E298213EC31F00CBE9A7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E360E29A213EC40300CBE9A7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E360E29C213ED40F00CBE9A7 /* IQKeyboardManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManager.framework; path = Carthage/Build/iOS/IQKeyboardManager.framework; sourceTree = "<group>"; };
+		E360E29E213EE37700CBE9A7 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		E360E2A0213EE38600CBE9A7 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		E3837452213AFB63006C1054 /* JatAppDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JatAppDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3837455213AFB63006C1054 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E383745A213AFB63006C1054 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 			children = (
 				E360E298213EC31F00CBE9A7 /* LoginViewController.swift */,
 				E360E29A213EC40300CBE9A7 /* LoginViewModel.swift */,
+				E360E2A0213EE38600CBE9A7 /* RegistrationViewController.swift */,
+				E360E29E213EE37700CBE9A7 /* RegistrationViewModel.swift */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -247,8 +253,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E360E292213E85A300CBE9A7 /* ServerError.swift in Sources */,
+				E360E29F213EE37800CBE9A7 /* RegistrationViewModel.swift in Sources */,
 				E3F62718213E6E6000666CE5 /* AuthorizationService.swift in Sources */,
 				E360E290213E820000CBE9A7 /* BaseModel.swift in Sources */,
+				E360E2A1213EE38600CBE9A7 /* RegistrationViewController.swift in Sources */,
 				E360E299213EC31F00CBE9A7 /* LoginViewController.swift in Sources */,
 				E3837456213AFB63006C1054 /* AppDelegate.swift in Sources */,
 				E360E296213EACF700CBE9A7 /* CredentialsStorage.swift in Sources */,

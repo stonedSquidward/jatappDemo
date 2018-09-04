@@ -23,10 +23,13 @@ struct Path {
     private static var baseURL = "http://apiecho.cf/api/"
     
     static let login = "\(baseURL)login/"
+    static let signup = "\(baseURL)signup/"  //registration
 }
 
 class AuthorizationService: NSObject {
 
+    static let sharedInstance = AuthorizationService()
+    
     func login(email:String, password: String) -> Observable<UserResponse> {
         
         return Observable.create({ (observer) -> Disposable in
@@ -39,7 +42,7 @@ class AuthorizationService: NSObject {
                                                      headers: nil)
                 .responseJSON(completionHandler: { (response) in
                     
-                    Log.debug?.message("Server response = \(response)")
+                    Log.debug?.message("Login server response = \(response)")
                     
                     switch response.result {
                     case .success(let value):
@@ -50,21 +53,69 @@ class AuthorizationService: NSObject {
                         if serverResponse.isSuccess {
                             guard let loginData = serverResponse.data else {
                                 observer.on(.error(AuthorizationError.LoginError("Empty response")))
-                                Log.error?.message("Data is empty")
+                                Log.error?.message("Login data is empty")
                                 return
                             }
-                            
                             CredentialsStorage.token = loginData.accessToken
                             observer.on(.next(loginData))
                             observer.on(.completed)
                         } else {
                             let errorMessage = serverResponse.errors[0].message ?? "Login error"
                             observer.on(.error(AuthorizationError.LoginError(errorMessage)))
-                            Log.error?.message("login error \(errorMessage)")
+                            Log.error?.message("Login error \(errorMessage)")
                         }
                         
                     case .failure(let error):
-                        Log.error?.message("login error \(error.localizedDescription)")
+                        Log.error?.message("Login error \(error.localizedDescription)")
+                        observer.on(.error(error))
+                        return
+                    }
+                })
+            
+            return Disposables.create {
+                return requestReference.cancel()
+            }
+        })
+    }
+    
+    func signup(name: String, email:String, password: String) -> Observable<UserResponse> {
+        
+        return Observable.create({ (observer) -> Disposable in
+            
+            let requestReference = Alamofire.request(Path.signup,
+                                                     method: .post ,
+                                                     parameters: [ "name": name,
+                                                                   "email": email,
+                                                                   "password": password],
+                                                     encoding: JSONEncoding.default,
+                                                     headers: nil)
+                .responseJSON(completionHandler: { (response) in
+                    
+                    Log.debug?.message("Signup server response = \(response)")
+                    
+                    switch response.result {
+                    case .success(let value):
+                        
+                        let json = value as? [String : Any] ?? [:]
+                        guard let serverResponse = Mapper<BaseModel<UserResponse>>().map(JSON: json) else { return }
+                        
+                        if serverResponse.isSuccess {
+                            guard let loginData = serverResponse.data else {
+                                observer.on(.error(AuthorizationError.LoginError("Empty response")))
+                                Log.error?.message("Signup data is empty")
+                                return
+                            }
+                            CredentialsStorage.token = loginData.accessToken
+                            observer.on(.next(loginData))
+                            observer.on(.completed)
+                        } else {
+                            let errorMessage = serverResponse.errors[0].message ?? "Login error"
+                            observer.on(.error(AuthorizationError.LoginError(errorMessage)))
+                            Log.error?.message("Signup error \(errorMessage)")
+                        }
+                        
+                    case .failure(let error):
+                        Log.error?.message("Signup error \(error.localizedDescription)")
                         observer.on(.error(error))
                         return
                     }

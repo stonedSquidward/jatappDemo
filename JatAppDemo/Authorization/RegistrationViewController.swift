@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  RegistrationViewController.swift
 //  JatAppDemo
 //
 //  Created by HavanRoman on 9/4/18.
@@ -11,25 +11,26 @@ import MBProgressHUD
 import RxSwift
 import RxCocoa
 
-class LoginViewController: UIViewController {
+class RegistrationViewController: UIViewController {
 
     // MARK: - IBOutlets
     
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
     // MARK: - Properties
     
-    private let viewModel = LoginViewModel()
+    private let viewModel = RegistrationViewModel()
     private let disposeBag = DisposeBag()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         #if DEBUG
-        emailTextField.text = "tetsIos123@gmail.com"
+        nameTextField.text = "testIos"
+        emailTextField.text = "tetsIos333333@gmail.com"
         passwordTextField.text = "qwerty123"
         #endif
         
@@ -46,12 +47,12 @@ class LoginViewController: UIViewController {
     
     // MARK: - IBActions
     
-    @IBAction func loginButtonAction(_ sender: UIButton) {
-        guard let email = emailTextField.text,
-            let pass = passwordTextField.text else { return }
+    @IBAction func signupButtonAction(_ sender: UIButton) {
+        guard let name = nameTextField.text,
+            let email = emailTextField.text,
+            let password = passwordTextField.text else { return }
         
-        viewModel.login(email: email, password: pass)
+        viewModel.signup(name: name, email: email, password: password)
     }
-
-
+    
 }
