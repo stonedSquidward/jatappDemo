@@ -10,28 +10,73 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="JatAppDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="JatAppDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0JV-3N-ox9">
-                                <rect key="frame" x="171.5" y="323.5" width="32.5" height="20.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="69m-VC-pa6">
+                                <rect key="frame" x="87.5" y="220.5" width="200" height="80"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IuN-3q-rxc">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vV1-Nc-ZLc">
+                                        <rect key="frame" x="0.0" y="50" width="200" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="W3U-ro-j9i"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6V5-k8-HwS">
+                                <rect key="frame" x="155.5" y="517" width="64" height="30"/>
+                                <state key="normal" title=" SIGN UP"/>
+                                <connections>
+                                    <action selector="goToRegistrationButtonAcion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fZB-mg-ExK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tpb-F0-3uU">
+                                <rect key="frame" x="166.5" y="170" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mqz-qV-ccR">
+                                <rect key="frame" x="160.5" y="330.5" width="54" height="30"/>
+                                <state key="normal" title="SIGN IN"/>
+                                <connections>
+                                    <action selector="loginButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LzU-zI-wOE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="0JV-3N-ox9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ifw-r0-ioY"/>
-                            <constraint firstItem="0JV-3N-ox9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q1G-jh-Wnh"/>
+                            <constraint firstItem="69m-VC-pa6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4iD-Qs-MSu"/>
+                            <constraint firstItem="69m-VC-pa6" firstAttribute="top" secondItem="Tpb-F0-3uU" secondAttribute="bottom" constant="30" id="7yP-Cb-h8X"/>
+                            <constraint firstItem="mqz-qV-ccR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bjf-CO-LJB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6V5-k8-HwS" secondAttribute="bottom" constant="120" id="PAv-fI-rje"/>
+                            <constraint firstItem="Tpb-F0-3uU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="f8V-AZ-OAP"/>
+                            <constraint firstItem="6V5-k8-HwS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hxW-54-9cz"/>
+                            <constraint firstItem="mqz-qV-ccR" firstAttribute="top" secondItem="69m-VC-pa6" secondAttribute="bottom" constant="30" id="q1W-fb-7xV"/>
+                            <constraint firstItem="Tpb-F0-3uU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t94-Ug-uwq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="IuN-3q-rxc" id="PHP-PZ-cRA"/>
+                        <outlet property="loginButton" destination="mqz-qV-ccR" id="RTg-CI-Dum"/>
+                        <outlet property="passwordTextField" destination="vV1-Nc-ZLc" id="2IE-47-Ylf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
