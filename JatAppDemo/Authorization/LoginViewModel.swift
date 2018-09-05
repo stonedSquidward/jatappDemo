@@ -13,6 +13,7 @@ class LoginViewModel {
 
     var isLoadingContent: Variable<Bool> = Variable(false)
     var goToNextScreen: Variable<Bool> = Variable(false)
+    var showErrorAlertMessage: Variable<String> = Variable("")
     
     var authorizationService = AuthorizationService.sharedInstance
     
@@ -28,9 +29,12 @@ class LoginViewModel {
                 case .next(let value):
                     Log.debug?.message("LoginViewModel TOKEN = \(value.accessToken)")
                     strongSelf.goToNextScreen.value = true
-                case .error(let error):
-                    Log.debug?.message("LoginViewModel ERROR = \(error.localizedDescription)")
+                case .error(AuthorizationError.LoginError(let errorMessage)):
+                    Log.debug?.message("LoginViewModel ERROR = \(errorMessage)")
+                    strongSelf.showErrorAlertMessage.value = errorMessage
                 case .completed:
+                    break
+                case .error(_):
                     break
                 }
                 

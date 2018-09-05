@@ -51,6 +51,13 @@ class RegistrationViewController: UIViewController {
                 strongSelf.navigationController?.pushViewController(vc, animated: true)
             }
         }
+        
+        _ = viewModel.showErrorAlertMessage.asObservable().skip(1).bind { [weak self] value in
+            guard let strongSelf = self else { return }
+            
+            let alert = UIAlertController.errorAlert(message: value)
+            strongSelf.present(alert, animated: true)
+        }
     }
     
     // MARK: - IBActions

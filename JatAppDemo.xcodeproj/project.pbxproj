@@ -29,6 +29,7 @@
 		E3D1B4D9213FD822006A5710 /* TextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D1B4D8213FD822006A5710 /* TextViewModel.swift */; };
 		E3D1B4DB213FD832006A5710 /* TextTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D1B4DA213FD832006A5710 /* TextTableViewController.swift */; };
 		E3D1B4DD213FF2F2006A5710 /* TextResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D1B4DC213FF2F2006A5710 /* TextResponse.swift */; };
+		E3D1B4E021400300006A5710 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D1B4DF21400300006A5710 /* UIAlertController.swift */; };
 		E3F62718213E6E6000666CE5 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F62717213E6E6000666CE5 /* AuthorizationService.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		E3D1B4D8213FD822006A5710 /* TextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewModel.swift; sourceTree = "<group>"; };
 		E3D1B4DA213FD832006A5710 /* TextTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableViewController.swift; sourceTree = "<group>"; };
 		E3D1B4DC213FF2F2006A5710 /* TextResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextResponse.swift; sourceTree = "<group>"; };
+		E3D1B4DF21400300006A5710 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		E3F62717213E6E6000666CE5 /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,6 +142,7 @@
 		E3837454213AFB63006C1054 /* JatAppDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E3D1B4DE214002ED006A5710 /* Extensions */,
 				E3D1B4D7213FD801006A5710 /* Sandbox */,
 				E360E297213EC08E00CBE9A7 /* Authorization */,
 				E3837455213AFB63006C1054 /* AppDelegate.swift */,
@@ -172,6 +175,14 @@
 				E3D1B4DA213FD832006A5710 /* TextTableViewController.swift */,
 			);
 			path = Sandbox;
+			sourceTree = "<group>";
+		};
+		E3D1B4DE214002ED006A5710 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E3D1B4DF21400300006A5710 /* UIAlertController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +287,7 @@
 				E360E29F213EE37800CBE9A7 /* RegistrationViewModel.swift in Sources */,
 				E302A4BA213FD0B100C92B1F /* SandboxService.swift in Sources */,
 				E3D1B4D9213FD822006A5710 /* TextViewModel.swift in Sources */,
+				E3D1B4E021400300006A5710 /* UIAlertController.swift in Sources */,
 				E3F62718213E6E6000666CE5 /* AuthorizationService.swift in Sources */,
 				E360E290213E820000CBE9A7 /* BaseModel.swift in Sources */,
 				E360E2A1213EE38600CBE9A7 /* RegistrationViewController.swift in Sources */,

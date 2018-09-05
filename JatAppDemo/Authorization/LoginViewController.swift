@@ -10,6 +10,7 @@ import UIKit
 import MBProgressHUD
 import RxSwift
 import RxCocoa
+import CleanroomLogger
 
 class LoginViewController: UIViewController {
 
@@ -47,6 +48,13 @@ class LoginViewController: UIViewController {
                 let vc = TextTableViewController.create()
                 strongSelf.navigationController?.pushViewController(vc, animated: true)
             }
+        }
+        
+        _ = viewModel.showErrorAlertMessage.asObservable().skip(1).bind { [weak self] value in
+            guard let strongSelf = self else { return }
+            
+            let alert = UIAlertController.errorAlert(message: value)
+            strongSelf.present(alert, animated: true)
         }
     }
     
