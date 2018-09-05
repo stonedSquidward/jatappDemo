@@ -14,10 +14,8 @@ import RxCocoa
 class TextTableViewController: UITableViewController {
 
     // MARK: - Properties
-    
     private let viewModel = TextViewModel()
     private let disposeBag = DisposeBag()
-    
     
     // MARK: - Lifecycle
     static func create() -> TextTableViewController {
@@ -28,7 +26,7 @@ class TextTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       _ = viewModel.isLoadingContent.asObservable().bind { [weak self] value in
+        viewModel.isLoadingContent.asObservable().bind { [weak self] value in
             guard let strongSelf = self else { return }
             
             if value {
@@ -36,17 +34,17 @@ class TextTableViewController: UITableViewController {
             } else {
                 MBProgressHUD.hide(for: strongSelf.view, animated: true)
             }
-        }
+            }.disposed(by: disposeBag)
         
         viewModel.getText()
-    
-       _ = viewModel.isUpdateTableView.asObservable().bind { [weak self] value in
+        
+        viewModel.isUpdateTableView.asObservable().bind { [weak self] value in
             guard let strongSelf = self else { return }
-
+            
             if value {
                 strongSelf.tableView.reloadData()
             }
-        }
+            }.disposed(by: disposeBag)
         
     }
     
@@ -66,7 +64,7 @@ class TextTableViewController: UITableViewController {
 
         let ch = Array(viewModel.dictionary.keys)[indexPath.row]
         let count = viewModel.dictionary[ch] ?? 0
-        cell.textLabel?.text = "character = \(ch), count = \(count)"
+        cell.textLabel?.text = "character = '\(ch)', count = \(count)"
 
         return cell
     }

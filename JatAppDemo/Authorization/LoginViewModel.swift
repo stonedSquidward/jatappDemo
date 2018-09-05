@@ -17,6 +17,8 @@ class LoginViewModel {
     
     var authorizationService = AuthorizationService.sharedInstance
     
+    private let disposeBag = DisposeBag()
+    
     func login(email: String, password: String) {
         isLoadingContent.value = true
         
@@ -38,8 +40,8 @@ class LoginViewModel {
                     break
                 }
                 
-               strongSelf.isLoadingContent.value = false
-        }
+                strongSelf.isLoadingContent.value = false
+            }.disposed(by: disposeBag)
     }
     
 }

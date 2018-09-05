@@ -13,15 +13,16 @@ class TextViewModel {
     
     var isLoadingContent: Variable<Bool> = Variable(false)
     var isUpdateTableView: Variable<Bool> = Variable(false)
-    
     var dictionary = [Character: Int]()
     
     var sandboxService = SandboxService()
     
+    private let disposeBag = DisposeBag()
+    
     func getText() {
         isLoadingContent.value = true
         
-        _ = sandboxService.getText().subscribe { [weak self] (event) in
+        sandboxService.getText().subscribe { [weak self] (event) in
             guard let strongSelf = self else { return }
             
             switch event {
@@ -36,8 +37,8 @@ class TextViewModel {
             }
             
             strongSelf.isLoadingContent.value = false
-
-        }
+            
+            }.disposed(by: disposeBag)
     }
     
     private func countNumberOfCharacters(text: String) {

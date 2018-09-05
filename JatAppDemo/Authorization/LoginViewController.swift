@@ -33,29 +33,29 @@ class LoginViewController: UIViewController {
         passwordTextField.text = "qwerty123"
         #endif
         
-        _ = viewModel.isLoadingContent.asObservable().bind { [weak self] value in
+        viewModel.isLoadingContent.asObservable().bind { [weak self] value in
             guard let strongSelf = self else { return }
             if value {
                 MBProgressHUD.showAdded(to: strongSelf.view, animated: true)
             } else {
                 MBProgressHUD.hide(for: strongSelf.view, animated: true)
             }
-        }
+            }.disposed(by: disposeBag)
         
-        _ = viewModel.goToNextScreen.asObservable().bind { [weak self] value in
+        viewModel.goToNextScreen.asObservable().bind { [weak self] value in
             guard let strongSelf = self else { return }
             if value {
                 let vc = TextTableViewController.create()
                 strongSelf.navigationController?.pushViewController(vc, animated: true)
             }
-        }
+            }.disposed(by: disposeBag)
         
-        _ = viewModel.showErrorAlertMessage.asObservable().skip(1).bind { [weak self] value in
+        viewModel.showErrorAlertMessage.asObservable().skip(1).bind { [weak self] value in
             guard let strongSelf = self else { return }
             
             let alert = UIAlertController.errorAlert(message: value)
             strongSelf.present(alert, animated: true)
-        }
+            }.disposed(by: disposeBag)
     }
     
     // MARK: - IBActions
