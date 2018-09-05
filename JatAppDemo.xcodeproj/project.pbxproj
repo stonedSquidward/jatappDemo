@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E302A4BA213FD0B100C92B1F /* SandboxService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E302A4B9213FD0B100C92B1F /* SandboxService.swift */; };
 		E360E290213E820000CBE9A7 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E28F213E820000CBE9A7 /* BaseModel.swift */; };
 		E360E292213E85A300CBE9A7 /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E291213E85A300CBE9A7 /* ServerError.swift */; };
 		E360E294213E888A00CBE9A7 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E293213E888A00CBE9A7 /* UserResponse.swift */; };
@@ -25,10 +26,14 @@
 		E383746D213B0243006C1054 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E383746C213B0243006C1054 /* KeychainAccess.framework */; };
 		E383746F213B0247006C1054 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E383746E213B0247006C1054 /* MBProgressHUD.framework */; };
 		E3837471213B024C006C1054 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3837470213B024C006C1054 /* ObjectMapper.framework */; };
+		E3D1B4D9213FD822006A5710 /* TextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D1B4D8213FD822006A5710 /* TextViewModel.swift */; };
+		E3D1B4DB213FD832006A5710 /* TextTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D1B4DA213FD832006A5710 /* TextTableViewController.swift */; };
+		E3D1B4DD213FF2F2006A5710 /* TextResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D1B4DC213FF2F2006A5710 /* TextResponse.swift */; };
 		E3F62718213E6E6000666CE5 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F62717213E6E6000666CE5 /* AuthorizationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E302A4B9213FD0B100C92B1F /* SandboxService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxService.swift; sourceTree = "<group>"; };
 		E360E28F213E820000CBE9A7 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		E360E291213E85A300CBE9A7 /* ServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerError.swift; sourceTree = "<group>"; };
 		E360E293213E888A00CBE9A7 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
@@ -50,6 +55,9 @@
 		E383746E213B0247006C1054 /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
 		E3837470213B024C006C1054 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		E3837472213B0250006C1054 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		E3D1B4D8213FD822006A5710 /* TextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewModel.swift; sourceTree = "<group>"; };
+		E3D1B4DA213FD832006A5710 /* TextTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableViewController.swift; sourceTree = "<group>"; };
+		E3D1B4DC213FF2F2006A5710 /* TextResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextResponse.swift; sourceTree = "<group>"; };
 		E3F62717213E6E6000666CE5 /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				E3F62717213E6E6000666CE5 /* AuthorizationService.swift */,
+				E302A4B9213FD0B100C92B1F /* SandboxService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -94,6 +103,7 @@
 				E360E28F213E820000CBE9A7 /* BaseModel.swift */,
 				E360E291213E85A300CBE9A7 /* ServerError.swift */,
 				E360E293213E888A00CBE9A7 /* UserResponse.swift */,
+				E3D1B4DC213FF2F2006A5710 /* TextResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -130,6 +140,7 @@
 		E3837454213AFB63006C1054 /* JatAppDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E3D1B4D7213FD801006A5710 /* Sandbox */,
 				E360E297213EC08E00CBE9A7 /* Authorization */,
 				E3837455213AFB63006C1054 /* AppDelegate.swift */,
 				E3837459213AFB63006C1054 /* Main.storyboard */,
@@ -152,6 +163,15 @@
 				E3837468213B023C006C1054 /* Alamofire.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E3D1B4D7213FD801006A5710 /* Sandbox */ = {
+			isa = PBXGroup;
+			children = (
+				E3D1B4D8213FD822006A5710 /* TextViewModel.swift */,
+				E3D1B4DA213FD832006A5710 /* TextTableViewController.swift */,
+			);
+			path = Sandbox;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,13 +274,17 @@
 			files = (
 				E360E292213E85A300CBE9A7 /* ServerError.swift in Sources */,
 				E360E29F213EE37800CBE9A7 /* RegistrationViewModel.swift in Sources */,
+				E302A4BA213FD0B100C92B1F /* SandboxService.swift in Sources */,
+				E3D1B4D9213FD822006A5710 /* TextViewModel.swift in Sources */,
 				E3F62718213E6E6000666CE5 /* AuthorizationService.swift in Sources */,
 				E360E290213E820000CBE9A7 /* BaseModel.swift in Sources */,
 				E360E2A1213EE38600CBE9A7 /* RegistrationViewController.swift in Sources */,
 				E360E299213EC31F00CBE9A7 /* LoginViewController.swift in Sources */,
 				E3837456213AFB63006C1054 /* AppDelegate.swift in Sources */,
+				E3D1B4DD213FF2F2006A5710 /* TextResponse.swift in Sources */,
 				E360E296213EACF700CBE9A7 /* CredentialsStorage.swift in Sources */,
 				E360E294213E888A00CBE9A7 /* UserResponse.swift in Sources */,
+				E3D1B4DB213FD832006A5710 /* TextTableViewController.swift in Sources */,
 				E360E29B213EC40300CBE9A7 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

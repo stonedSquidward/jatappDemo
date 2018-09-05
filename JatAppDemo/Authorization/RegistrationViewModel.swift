@@ -13,6 +13,7 @@ import CleanroomLogger
 class RegistrationViewModel {
  
     var isLoadingContent: Variable<Bool> = Variable(false)
+    var goToNextScreen: Variable<Bool> = Variable(false)
     
     var authorizationService = AuthorizationService.sharedInstance
     
@@ -27,6 +28,7 @@ class RegistrationViewModel {
                 switch event {
                 case .next(let value):
                     Log.debug?.message("RegistrationViewModel TOKEN = \(value.accessToken)")
+                    strongSelf.goToNextScreen.value = true
                 case .error(let error):
                     Log.debug?.message("RegistrationViewModel ERROR = \(error.localizedDescription)")
                 case .completed:

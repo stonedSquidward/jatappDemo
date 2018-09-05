@@ -12,7 +12,8 @@ import CleanroomLogger
 class LoginViewModel {
 
     var isLoadingContent: Variable<Bool> = Variable(false)
-
+    var goToNextScreen: Variable<Bool> = Variable(false)
+    
     var authorizationService = AuthorizationService.sharedInstance
     
     func login(email: String, password: String) {
@@ -26,6 +27,7 @@ class LoginViewModel {
                 switch event {
                 case .next(let value):
                     Log.debug?.message("LoginViewModel TOKEN = \(value.accessToken)")
+                    strongSelf.goToNextScreen.value = true
                 case .error(let error):
                     Log.debug?.message("LoginViewModel ERROR = \(error.localizedDescription)")
                 case .completed:

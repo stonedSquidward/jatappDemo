@@ -6,7 +6,6 @@
 //  Copyright © 2018 JatApp. All rights reserved.
 //
 
-import UIKit
 import Alamofire
 import RxSwift
 import ObjectMapper
@@ -14,16 +13,17 @@ import CleanroomLogger
 
 enum AuthorizationError: Error {
     case LoginError(String)
+    case SignupError(String)
 }
 
-
 struct Path {
-    
     private init() {}
     private static var baseURL = "http://apiecho.cf/api/"
     
     static let login = "\(baseURL)login/"
-    static let signup = "\(baseURL)signup/"  //registration
+    static let signup = "\(baseURL)signup/"
+    
+    static let getText = "\(baseURL)get/text/"
 }
 
 class AuthorizationService: NSObject {
@@ -101,7 +101,7 @@ class AuthorizationService: NSObject {
                         
                         if serverResponse.isSuccess {
                             guard let loginData = serverResponse.data else {
-                                observer.on(.error(AuthorizationError.LoginError("Empty response")))
+                                observer.on(.error(AuthorizationError.SignupError("Empty response")))
                                 Log.error?.message("Signup data is empty")
                                 return
                             }
@@ -110,7 +110,7 @@ class AuthorizationService: NSObject {
                             observer.on(.completed)
                         } else {
                             let errorMessage = serverResponse.errors[0].message ?? "Login error"
-                            observer.on(.error(AuthorizationError.LoginError(errorMessage)))
+                            observer.on(.error(AuthorizationError.SignupError(errorMessage)))
                             Log.error?.message("Signup error \(errorMessage)")
                         }
                         

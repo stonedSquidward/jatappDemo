@@ -24,7 +24,6 @@ class LoginViewController: UIViewController {
     private let viewModel = LoginViewModel()
     private let disposeBag = DisposeBag()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,13 +32,20 @@ class LoginViewController: UIViewController {
         passwordTextField.text = "qwerty123"
         #endif
         
-        viewModel.isLoadingContent.asObservable().bind { [weak self] value in
+        _ = viewModel.isLoadingContent.asObservable().bind { [weak self] value in
             guard let strongSelf = self else { return }
-            
             if value {
                 MBProgressHUD.showAdded(to: strongSelf.view, animated: true)
             } else {
                 MBProgressHUD.hide(for: strongSelf.view, animated: true)
+            }
+        }
+        
+        _ = viewModel.goToNextScreen.asObservable().bind { [weak self] value in
+            guard let strongSelf = self else { return }
+            if value {
+                let vc = TextTableViewController.create()
+                strongSelf.navigationController?.pushViewController(vc, animated: true)
             }
         }
     }
@@ -52,6 +58,4 @@ class LoginViewController: UIViewController {
         
         viewModel.login(email: email, password: pass)
     }
-
-
 }
