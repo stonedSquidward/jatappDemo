@@ -7,21 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E302A4BA213FD0B100C92B1F /* SandboxService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E302A4B9213FD0B100C92B1F /* SandboxService.swift */; };
+		E360E290213E820000CBE9A7 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E28F213E820000CBE9A7 /* BaseModel.swift */; };
+		E360E292213E85A300CBE9A7 /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E291213E85A300CBE9A7 /* ServerError.swift */; };
+		E360E294213E888A00CBE9A7 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E293213E888A00CBE9A7 /* UserResponse.swift */; };
+		E360E296213EACF700CBE9A7 /* CredentialsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E295213EACF700CBE9A7 /* CredentialsStorage.swift */; };
+		E360E299213EC31F00CBE9A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E298213EC31F00CBE9A7 /* LoginViewController.swift */; };
+		E360E29B213EC40300CBE9A7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E29A213EC40300CBE9A7 /* LoginViewModel.swift */; };
+		E360E29D213ED40F00CBE9A7 /* IQKeyboardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E360E29C213ED40F00CBE9A7 /* IQKeyboardManager.framework */; };
+		E360E29F213EE37800CBE9A7 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E29E213EE37700CBE9A7 /* RegistrationViewModel.swift */; };
+		E360E2A1213EE38600CBE9A7 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E2A0213EE38600CBE9A7 /* RegistrationViewController.swift */; };
 		E3837456213AFB63006C1054 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3837455213AFB63006C1054 /* AppDelegate.swift */; };
-		E3837458213AFB63006C1054 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3837457213AFB63006C1054 /* ViewController.swift */; };
 		E383745B213AFB63006C1054 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3837459213AFB63006C1054 /* Main.storyboard */; };
 		E383745D213AFB65006C1054 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E383745C213AFB65006C1054 /* Assets.xcassets */; };
 		E3837460213AFB65006C1054 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E383745E213AFB65006C1054 /* LaunchScreen.storyboard */; };
+		E3837469213B023C006C1054 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3837468213B023C006C1054 /* Alamofire.framework */; };
+		E383746B213B023F006C1054 /* CleanroomLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E383746A213B023F006C1054 /* CleanroomLogger.framework */; };
+		E383746D213B0243006C1054 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E383746C213B0243006C1054 /* KeychainAccess.framework */; };
+		E383746F213B0247006C1054 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E383746E213B0247006C1054 /* MBProgressHUD.framework */; };
+		E3837471213B024C006C1054 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3837470213B024C006C1054 /* ObjectMapper.framework */; };
+		E3D1B4D9213FD822006A5710 /* TextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D1B4D8213FD822006A5710 /* TextViewModel.swift */; };
+		E3D1B4DB213FD832006A5710 /* TextTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D1B4DA213FD832006A5710 /* TextTableViewController.swift */; };
+		E3D1B4DD213FF2F2006A5710 /* TextResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D1B4DC213FF2F2006A5710 /* TextResponse.swift */; };
+		E3D1B4E021400300006A5710 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D1B4DF21400300006A5710 /* UIAlertController.swift */; };
+		E3F62718213E6E6000666CE5 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F62717213E6E6000666CE5 /* AuthorizationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E302A4B9213FD0B100C92B1F /* SandboxService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxService.swift; sourceTree = "<group>"; };
+		E360E28F213E820000CBE9A7 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		E360E291213E85A300CBE9A7 /* ServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerError.swift; sourceTree = "<group>"; };
+		E360E293213E888A00CBE9A7 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		E360E295213EACF700CBE9A7 /* CredentialsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsStorage.swift; sourceTree = "<group>"; };
+		E360E298213EC31F00CBE9A7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E360E29A213EC40300CBE9A7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		E360E29C213ED40F00CBE9A7 /* IQKeyboardManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManager.framework; path = Carthage/Build/iOS/IQKeyboardManager.framework; sourceTree = "<group>"; };
+		E360E29E213EE37700CBE9A7 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		E360E2A0213EE38600CBE9A7 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		E3837452213AFB63006C1054 /* JatAppDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JatAppDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3837455213AFB63006C1054 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E3837457213AFB63006C1054 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E383745A213AFB63006C1054 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E383745C213AFB65006C1054 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E383745F213AFB65006C1054 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3837461213AFB65006C1054 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3837468213B023C006C1054 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		E383746A213B023F006C1054 /* CleanroomLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CleanroomLogger.framework; path = Carthage/Build/iOS/CleanroomLogger.framework; sourceTree = "<group>"; };
+		E383746C213B0243006C1054 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
+		E383746E213B0247006C1054 /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
+		E3837470213B024C006C1054 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		E3837472213B0250006C1054 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		E3D1B4D8213FD822006A5710 /* TextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewModel.swift; sourceTree = "<group>"; };
+		E3D1B4DA213FD832006A5710 /* TextTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableViewController.swift; sourceTree = "<group>"; };
+		E3D1B4DC213FF2F2006A5710 /* TextResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextResponse.swift; sourceTree = "<group>"; };
+		E3D1B4DF21400300006A5710 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
+		E3F62717213E6E6000666CE5 /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +68,66 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3837471213B024C006C1054 /* ObjectMapper.framework in Frameworks */,
+				E383746F213B0247006C1054 /* MBProgressHUD.framework in Frameworks */,
+				E383746D213B0243006C1054 /* KeychainAccess.framework in Frameworks */,
+				E383746B213B023F006C1054 /* CleanroomLogger.framework in Frameworks */,
+				E3837469213B023C006C1054 /* Alamofire.framework in Frameworks */,
+				E360E29D213ED40F00CBE9A7 /* IQKeyboardManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E350F09B213BD9D500F9D002 /* Kit */ = {
+			isa = PBXGroup;
+			children = (
+				E360E295213EACF700CBE9A7 /* CredentialsStorage.swift */,
+				E360E28E213E81CC00CBE9A7 /* Models */,
+				E350F09C213BD9DD00F9D002 /* Services */,
+			);
+			path = Kit;
+			sourceTree = "<group>";
+		};
+		E350F09C213BD9DD00F9D002 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E3F62717213E6E6000666CE5 /* AuthorizationService.swift */,
+				E302A4B9213FD0B100C92B1F /* SandboxService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E360E28E213E81CC00CBE9A7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E360E28F213E820000CBE9A7 /* BaseModel.swift */,
+				E360E291213E85A300CBE9A7 /* ServerError.swift */,
+				E360E293213E888A00CBE9A7 /* UserResponse.swift */,
+				E3D1B4DC213FF2F2006A5710 /* TextResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E360E297213EC08E00CBE9A7 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				E360E298213EC31F00CBE9A7 /* LoginViewController.swift */,
+				E360E29A213EC40300CBE9A7 /* LoginViewModel.swift */,
+				E360E2A0213EE38600CBE9A7 /* RegistrationViewController.swift */,
+				E360E29E213EE37700CBE9A7 /* RegistrationViewModel.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
 		E3837449213AFB63006C1054 = {
 			isa = PBXGroup;
 			children = (
+				E350F09B213BD9D500F9D002 /* Kit */,
 				E3837454213AFB63006C1054 /* JatAppDemo */,
 				E3837453213AFB63006C1054 /* Products */,
+				E3837467213B023C006C1054 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +142,47 @@
 		E3837454213AFB63006C1054 /* JatAppDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E3D1B4DE214002ED006A5710 /* Extensions */,
+				E3D1B4D7213FD801006A5710 /* Sandbox */,
+				E360E297213EC08E00CBE9A7 /* Authorization */,
 				E3837455213AFB63006C1054 /* AppDelegate.swift */,
-				E3837457213AFB63006C1054 /* ViewController.swift */,
 				E3837459213AFB63006C1054 /* Main.storyboard */,
 				E383745C213AFB65006C1054 /* Assets.xcassets */,
 				E383745E213AFB65006C1054 /* LaunchScreen.storyboard */,
 				E3837461213AFB65006C1054 /* Info.plist */,
 			);
 			path = JatAppDemo;
+			sourceTree = "<group>";
+		};
+		E3837467213B023C006C1054 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E360E29C213ED40F00CBE9A7 /* IQKeyboardManager.framework */,
+				E3837472213B0250006C1054 /* Result.framework */,
+				E3837470213B024C006C1054 /* ObjectMapper.framework */,
+				E383746E213B0247006C1054 /* MBProgressHUD.framework */,
+				E383746C213B0243006C1054 /* KeychainAccess.framework */,
+				E383746A213B023F006C1054 /* CleanroomLogger.framework */,
+				E3837468213B023C006C1054 /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E3D1B4D7213FD801006A5710 /* Sandbox */ = {
+			isa = PBXGroup;
+			children = (
+				E3D1B4D8213FD822006A5710 /* TextViewModel.swift */,
+				E3D1B4DA213FD832006A5710 /* TextTableViewController.swift */,
+			);
+			path = Sandbox;
+			sourceTree = "<group>";
+		};
+		E3D1B4DE214002ED006A5710 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E3D1B4DF21400300006A5710 /* UIAlertController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +195,7 @@
 				E383744E213AFB63006C1054 /* Sources */,
 				E383744F213AFB63006C1054 /* Frameworks */,
 				E3837450213AFB63006C1054 /* Resources */,
+				E3837475213B05FF006C1054 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -130,13 +252,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E3837475213B05FF006C1054 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CleanroomLogger.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MBProgressHUD.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxTest.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManager.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E383744E213AFB63006C1054 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3837458213AFB63006C1054 /* ViewController.swift in Sources */,
+				E360E292213E85A300CBE9A7 /* ServerError.swift in Sources */,
+				E360E29F213EE37800CBE9A7 /* RegistrationViewModel.swift in Sources */,
+				E302A4BA213FD0B100C92B1F /* SandboxService.swift in Sources */,
+				E3D1B4D9213FD822006A5710 /* TextViewModel.swift in Sources */,
+				E3D1B4E021400300006A5710 /* UIAlertController.swift in Sources */,
+				E3F62718213E6E6000666CE5 /* AuthorizationService.swift in Sources */,
+				E360E290213E820000CBE9A7 /* BaseModel.swift in Sources */,
+				E360E2A1213EE38600CBE9A7 /* RegistrationViewController.swift in Sources */,
+				E360E299213EC31F00CBE9A7 /* LoginViewController.swift in Sources */,
 				E3837456213AFB63006C1054 /* AppDelegate.swift in Sources */,
+				E3D1B4DD213FF2F2006A5710 /* TextResponse.swift in Sources */,
+				E360E296213EACF700CBE9A7 /* CredentialsStorage.swift in Sources */,
+				E360E294213E888A00CBE9A7 /* UserResponse.swift in Sources */,
+				E3D1B4DB213FD832006A5710 /* TextTableViewController.swift in Sources */,
+				E360E29B213EC40300CBE9A7 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +443,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7LLQS9XBT5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = JatAppDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,6 +465,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7LLQS9XBT5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = JatAppDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
