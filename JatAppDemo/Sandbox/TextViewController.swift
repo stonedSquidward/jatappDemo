@@ -58,7 +58,8 @@ class TextViewController: UIViewController {
     }
     
     @IBAction func goToNumberOfLettersAction(_ sender: Any) {
-    
+        let vc = NumberOfLettersTableViewController.create(text: viewModel.text.value)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func logoutButtonAction(_ sender: UIBarButtonItem) {

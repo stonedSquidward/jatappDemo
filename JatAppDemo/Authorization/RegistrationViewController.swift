@@ -56,8 +56,8 @@ class RegistrationViewController: UIViewController {
         viewModel.goToNextScreen.asObservable().bind { [weak self] value in
             guard let strongSelf = self else { return }
             if value {
-                let vc = NumberOfLettersTableViewController.create()
-                strongSelf.navigationController?.pushViewController(vc, animated: true)
+                let vc = TextViewController.create()
+                strongSelf.present(vc, animated: true)
             }
             }.disposed(by: disposeBag)
         
