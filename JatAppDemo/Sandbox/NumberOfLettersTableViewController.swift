@@ -11,16 +11,16 @@ import MBProgressHUD
 import RxSwift
 import RxCocoa
 
-class TextTableViewController: UITableViewController {
+class NumberOfLettersTableViewController: UITableViewController {
 
     // MARK: - Properties
-    private let viewModel = TextViewModel()
+    private let viewModel = NumberOfLettersViewModel()
     private let disposeBag = DisposeBag()
     
     // MARK: - Lifecycle
-    static func create() -> TextTableViewController {
+    static func create() -> NumberOfLettersTableViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! TextTableViewController
+        return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! NumberOfLettersTableViewController
     }
     
     override func viewDidLoad() {
@@ -46,6 +46,26 @@ class TextTableViewController: UITableViewController {
             }
             }.disposed(by: disposeBag)
         
+//        viewModel.goToLogin.asObservable().bind { [weak self] value in
+//            guard let strongSelf = self else { return }
+//
+//            if value {
+//                let vc = LoginViewController.create()
+//                strongSelf.present(vc, animated: true)
+//            }
+//            }.disposed(by: disposeBag)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        viewModel.goToLogin.asObservable().bind { [weak self] value in
+            guard let strongSelf = self else { return }
+            
+            if value {
+                let vc = LoginViewController.create()
+                strongSelf.present(vc, animated: true)
+            }
+            }.disposed(by: disposeBag)
     }
     
     // MARK: - Table view data source
