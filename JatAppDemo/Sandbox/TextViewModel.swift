@@ -2,7 +2,7 @@
 //  TextViewModel.swift
 //  JatAppDemo
 //
-//  Created by HavanRoman on 9/5/18.
+//  Created by HavanRoman on 10/8/18.
 //  Copyright © 2018 JatApp. All rights reserved.
 //
 
@@ -10,10 +10,10 @@ import RxSwift
 import CleanroomLogger
 
 class TextViewModel {
-    
+  
     var isLoadingContent: Variable<Bool> = Variable(false)
-    var isUpdateTableView: Variable<Bool> = Variable(false)
-    var dictionary = [Character: Int]()
+    var text: Variable<String> = Variable("")
+    var goToLogin: Variable<Bool> = Variable(false)
     
     var sandboxService = SandboxService()
     
@@ -28,8 +28,10 @@ class TextViewModel {
             switch event {
             case .next(let value):
                 Log.debug?.message("TextViewModel TEXT = \(value)")
-                
-                strongSelf.countNumberOfCharacters(text: value)
+                strongSelf.text.value = value
+            case.error(SandboxError.NoTokenError):
+                Log.debug?.message("No token")
+                strongSelf.goToLogin.value = true;
             case .error(let error):
                 Log.debug?.message("TextViewModel ERROR = \(error.localizedDescription)")
             case .completed:
@@ -39,17 +41,5 @@ class TextViewModel {
             strongSelf.isLoadingContent.value = false
             
             }.disposed(by: disposeBag)
-    }
-    
-    private func countNumberOfCharacters(text: String) {
-        text.forEach { character in
-            if dictionary[character] == nil {
-                dictionary[character] = 1
-            } else {
-                let count = dictionary[character] ?? 0
-                dictionary[character] = count + 1
-            }
-        }
-        isUpdateTableView.value = true
     }
 }
