@@ -17,6 +17,7 @@ class RegistrationViewModel {
     var showErrorAlertMessage: Variable<String> = Variable("")
     
     var authorizationService = AuthorizationService.sharedInstance
+    private let disposeBag = DisposeBag()
     
     func signup(name: String, email: String, password: String) {
         isLoadingContent.value = true
@@ -40,6 +41,6 @@ class RegistrationViewModel {
                 }
                 
                 strongSelf.isLoadingContent.value = false
-        }
+            }.disposed(by: disposeBag)
     }
 }

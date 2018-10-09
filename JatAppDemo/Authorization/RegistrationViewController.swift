@@ -25,6 +25,15 @@ class RegistrationViewController: UIViewController {
     private let viewModel = RegistrationViewModel()
     private let disposeBag = DisposeBag()
     
+    // MARK: - Life cycle
+    
+    static func create() -> RegistrationViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! RegistrationViewController
+        
+        return vc;
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,7 +43,7 @@ class RegistrationViewController: UIViewController {
         passwordTextField.text = "qwerty123"
         #endif
         
-        _ = viewModel.isLoadingContent.asObservable().bind { [weak self] value in
+        viewModel.isLoadingContent.asObservable().bind { [weak self] value in
             guard let strongSelf = self else { return }
             
             if value {
@@ -42,22 +51,22 @@ class RegistrationViewController: UIViewController {
             } else {
                 MBProgressHUD.hide(for: strongSelf.view, animated: true)
             }
-        }
+            }.disposed(by: disposeBag)
         
-        _ = viewModel.goToNextScreen.asObservable().bind { [weak self] value in
+        viewModel.goToNextScreen.asObservable().bind { [weak self] value in
             guard let strongSelf = self else { return }
             if value {
-                let vc = TextTableViewController.create()
-                strongSelf.navigationController?.pushViewController(vc, animated: true)
+                let vc = TextViewController.create()
+                strongSelf.present(vc, animated: true)
             }
-        }
+            }.disposed(by: disposeBag)
         
-        _ = viewModel.showErrorAlertMessage.asObservable().skip(1).bind { [weak self] value in
+        viewModel.showErrorAlertMessage.asObservable().skip(1).bind { [weak self] value in
             guard let strongSelf = self else { return }
             
             let alert = UIAlertController.errorAlert(message: value)
             strongSelf.present(alert, animated: true)
-        }
+            }.disposed(by: disposeBag)
     }
     
     // MARK: - IBActions
@@ -68,5 +77,8 @@ class RegistrationViewController: UIViewController {
             let password = passwordTextField.text else { return }
         
         viewModel.signup(name: name, email: email, password: password)
+    }
+    @IBAction func backToLoginButtonAction(_ sender: UIButton) {
+        self.dismiss(animated: true)
     }
 }

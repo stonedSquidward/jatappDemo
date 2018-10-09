@@ -12,6 +12,7 @@ import ObjectMapper
 import CleanroomLogger
 
 enum SandboxError: Error {
+    case NoTokenError
     case GetTextError(String)
 }
 
@@ -22,7 +23,7 @@ class SandboxService: NSObject {
         return Observable.create({ (observer) -> Disposable in
             
             guard let token = CredentialsStorage.token else {
-                observer.on(.error(SandboxError.GetTextError("Token is empty")))
+                observer.on(.error(SandboxError.NoTokenError))
                 return Disposables.create {}
             }
             
@@ -48,7 +49,7 @@ class SandboxService: NSObject {
                             observer.on(.completed)
                         } else {
                             let errorMessage = serverResponse.errors[0].message ?? "GetText error"
-                            observer.on(.error(AuthorizationError.LoginError(errorMessage)))
+                            observer.on(.error(SandboxError.NoTokenError))
                             Log.error?.message("GetText error \(errorMessage)")
                         }
                         
