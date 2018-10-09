@@ -16,8 +16,7 @@ public class BaseModel<T:Mappable>: Mappable {
     public var errors = [ServerError]()
     
     public required init?(map: Map) {
-        guard
-            let isSuccess = map.JSON["success"] as? Bool else {
+        guard let isSuccess = map.JSON["success"] as? Bool else {
                 return nil
         }
         
